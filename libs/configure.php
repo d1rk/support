@@ -3,18 +3,13 @@ if(!class_exists('Configure'))
 {
 	class Configure {
 
-		var $_store;
-
-		var $_this;
-
-
 /**
  * Returns a singleton instance of the Configure class.
  *
  * @return Configure instance
  * @access public
  */
-	function &getInstance() {
+	static function &getInstance() {
 		static $instance = array();
 		if (!$instance) {
 			if (!class_exists('Set')) {
@@ -49,7 +44,7 @@ if(!class_exists('Configure'))
  * @return boolean True if write was successful
  * @access public
  */
-	function write($config, $value = null) {
+	static function write($config, $value = null) {
 		$_this =& Configure::getInstance();
 
 		if (!is_array($config)) {
@@ -121,7 +116,7 @@ if(!class_exists('Configure'))
  * @return string value of Configure::$var
  * @access public
  */
-	function read($var = 'debug') {
+	static function read($var = 'debug') {
 		$_this =& Configure::getInstance();
 
 		if ($var === 'debug') {
@@ -171,7 +166,7 @@ if(!class_exists('Configure'))
  * @return void
  * @access public
  */
-	function delete($var = null) {
+	static function delete($var = null) {
 		$_this =& Configure::getInstance();
 
 		if (strpos($var, '.') === false) {

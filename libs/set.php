@@ -1127,4 +1127,6 @@ class Set {
 		return  $result;
 	}
 }
+
+}
 ?>
