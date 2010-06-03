@@ -77,7 +77,7 @@ class Folder {
  */
 	function __construct($path = false, $create = false, $mode = false) {
 		if (empty($path)) {
-			$path = TMP;
+			$path = '.';
 		}
 		if ($mode) {
 			$this->mode = $mode;
