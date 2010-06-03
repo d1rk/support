@@ -1,5 +1,6 @@
 <?php
 define('ROOT', dirname(dirname(__FILE__)));
+define('DS', '/');
 @require_once('libs/basics.php');
 @require_once('libs/svn.php');
 @require_once('libs/set.php');
