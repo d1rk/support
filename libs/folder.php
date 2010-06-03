@@ -76,7 +76,6 @@ class Folder {
  * @param mixed $mode Mode (CHMOD) to apply to created folder, false to ignore
  */
 	function __construct($path = false, $create = false, $mode = false) {
-		parent::__construct();
 		if (empty($path)) {
 			$path = TMP;
 		}
