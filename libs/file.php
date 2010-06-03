@@ -2,7 +2,7 @@
 if(!class_exists('File'))
 {
 if (!class_exists('Folder')) {
-	require 'folder.php';
+	require_once 'folder.php';
 }
 
 /**
@@ -11,7 +11,7 @@ if (!class_exists('Folder')) {
  * @package       cake
  * @subpackage    cake.cake.libs
  */
-class File extends Object {
+class File {
 
 /**
  * Folder object of the File
@@ -73,7 +73,7 @@ class File extends Object {
  */
 	function __construct($path, $create = false, $mode = 0755) {
 		parent::__construct();
-		$this->Folder =& new Folder(dirname($path), $create, $mode);
+		$this->Folder = new Folder(dirname($path), $create, $mode);
 		if (!is_dir($path)) {
 			$this->name = basename($path);
 		}

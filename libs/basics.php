@@ -1,26 +1,5 @@
 <?php
 /**
- * Basic Cake functionality.
- *
- * Core functions for including other source files, loading models and so forth.
- *
- * PHP versions 4 and 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       cake
- * @subpackage    cake.cake
- * @since         CakePHP(tm) v 0.2.9
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
-/**
  * Basic defines for timing functions.
  */
 	define('SECOND', 1);
@@ -30,19 +9,6 @@
 	define('WEEK', 604800);
 	define('MONTH', 2592000);
 	define('YEAR', 31536000);
-
-/**
- * Patch for PHP < 5.0
- */
-if (!function_exists('clone')) {
-	if (version_compare(PHP_VERSION, '5.0') < 0) {
-		eval ('
-		function clone($object)
-		{
-			return $object;
-		}');
-	}
-}
 
 /**
  * Loads configuration files. Receives a set of configuration files
@@ -72,24 +38,6 @@ if (!function_exists('clone')) {
 			}
 		}
 		return true;
-	}
-
-/**
- * Loads component/components from LIBS. Takes optional number of parameters.
- *
- * Example:
- *
- * `uses('flay', 'time');`
- *
- * @param string $name Filename without the .php part
- * @deprecated Will be removed in 2.0
- * @link http://book.cakephp.org/view/1140/uses
- */
-	function uses() {
-		$args = func_get_args();
-		foreach ($args as $file) {
-			require_once(LIBS . strtolower($file) . '.php');
-		}
 	}
 
 /**

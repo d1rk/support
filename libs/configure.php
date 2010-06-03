@@ -1,6 +1,11 @@
 <?php
 if(!class_exists('Configure'))
 {
+
+if (!class_exists('Set')) {
+	require_once 'set.php';
+}
+
 	class Configure {
 
 /**
@@ -12,10 +17,7 @@ if(!class_exists('Configure'))
 	static function &getInstance() {
 		static $instance = array();
 		if (!$instance) {
-			if (!class_exists('Set')) {
-				require 'set.php';
-			}
-			$instance[0] =& new Configure();
+			$instance[0] = new Configure();
 		}
 		return $instance[0];
 	}
@@ -45,7 +47,7 @@ if(!class_exists('Configure'))
  * @access public
  */
 	static function write($config, $value = null) {
-		$_this =& Configure::getInstance();
+		$_this = Configure::getInstance();
 
 		if (!is_array($config)) {
 			$config = array($config => $value);
