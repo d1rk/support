@@ -1049,8 +1049,6 @@ class HttpSocket extends CakeSocket {
 		parent::reset($initalState);
 		return true;
 	}
-}
-
 
 /**
  * Generates a well-formed querystring from $q
@@ -1084,5 +1082,7 @@ class HttpSocket extends CakeSocket {
 		}
 		return $out;
 	}
+}
+
 }
 ?>
