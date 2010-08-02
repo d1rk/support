@@ -7,4 +7,5 @@ define('DS', '/');
 @require_once('libs/configure.php');
 @require_once('libs/folder.php');
 @require_once('libs/file.php');
+@require_once('libs/http_socket.php');
 ?>
